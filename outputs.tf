@@ -1,3 +1,7 @@
+output "resource_group_cost_management_exports_id" {
+  description = "Map of id values across all resource_group_cost_management_exports, keyed the same as var.resource_group_cost_management_exports"
+  value       = { for k, v in azurerm_resource_group_cost_management_export.resource_group_cost_management_exports : k => v.id }
+}
 output "resource_group_cost_management_exports_active" {
   description = "Map of active values across all resource_group_cost_management_exports, keyed the same as var.resource_group_cost_management_exports"
   value       = { for k, v in azurerm_resource_group_cost_management_export.resource_group_cost_management_exports : k => v.active }
